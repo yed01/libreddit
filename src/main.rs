@@ -129,7 +129,7 @@ async fn main() {
 				.long("port")
 				.value_name("PORT")
 				.help("Port to listen on")
-				.default_value("8080")
+				.default_value("8020")
 				.takes_value(true),
 		)
 		.arg(
@@ -144,7 +144,7 @@ async fn main() {
 		.get_matches();
 
 	let address = matches.value_of("address").unwrap_or("0.0.0.0");
-	let port = std::env::var("PORT").unwrap_or_else(|_| matches.value_of("port").unwrap_or("8080").to_string());
+	let port = std::env::var("PORT").unwrap_or_else(|_| matches.value_of("port").unwrap_or("8020").to_string());
 	let hsts = matches.value_of("hsts");
 
 	let listener = [address, ":", &port].concat();
