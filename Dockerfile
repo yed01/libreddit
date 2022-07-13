@@ -28,7 +28,7 @@ RUN adduser --home /nonexistent --no-create-home --disabled-password libreddit
 USER libreddit
 
 # Tell Docker to expose port 8080
-EXPOSE 8080
+EXPOSE 8020
 
 # Run a healthcheck every minute to make sure Libreddit is functional
 HEALTHCHECK --interval=1m --timeout=3s CMD wget --spider --q http://localhost:8080/settings || exit 1
